@@ -8,7 +8,7 @@ div.a {
     outline: 2px solid #B0C4DE;
   }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .navbar li {
       padding: 10px;
     }
@@ -26,3 +26,9 @@ div.a {
       visibility: visible;
     }
   }
+  @media screen and (max-width: 600px) {
+    .demo a {
+       float: none;
+       width: 100%;
+    }
+ }
