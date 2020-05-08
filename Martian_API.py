@@ -11,9 +11,9 @@ sns.set(style="darkgrid")
 # Documentation: https://api.nasa.gov/assets/insight/InSight%20Weather%20API%20Documentation.pdf
 
 from api_key import nasa_key
+nasa_key
 base_url ='https://api.nasa.gov/insight_weather/?'
 query_url = f'{base_url}api_key={nasa_key}&feedtype=json&ver=1.'
-print(query_url)
 
 nasa_response = requests.get(query_url)
 nasa_json=nasa_response.json()
@@ -32,6 +32,7 @@ for sol in sol_key:
 date_list=[]
 numerical_dates=[]
 
+#format datas
 for day in sol_list:
     utc_day=nasa_json[day]['First_UTC']
     utc=datetime.strptime(utc_day, '%Y-%m-%dT%H:%M:%SZ')
