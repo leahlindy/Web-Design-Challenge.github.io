@@ -80,26 +80,27 @@ mars_df.to_csv('Resources/mars.csv', encoding='utf-8',index=False)
 s= mars_df['Average Temp']
 
 #plot each with matplot
+#Section broken- not saving data properly to plot- save as separate files (html wont access these images)
 fig = plt.figure()
 ax = sns.scatterplot(x='Sol', y='Average Temp', size=s, sizes=(75, 200),data=mars_df)
 ax.set_title('Avareage Temperature on Mars')
 ax.set_xlabel('Sol (Martian Day)')
 ax.set_ylabel('AT (F)')
-fig.savefig('templates/Visualizations/AT.png')
+fig.savefig('Visualizations/ATpy.png')
 
 fig = plt.figure()
 ax = sns.scatterplot(x='Sol', y='Horizontal Wind Speed', size=s, sizes=(75, 200), legend=False,data=mars_df)
 ax.set_title('Horizontal Wind Speed on Mars')
 ax.set_xlabel('Sol (Martian Day)')
 ax.set_ylabel('HWS (m/s)')
-fig.savefig('templates/Visualizations/HWS.png')
+fig.savefig('Visualizations/HWSpy.png')
 
 fig = plt.figure()
 ax = sns.scatterplot(x='Sol', y='Pressure', size=s, sizes=(75, 200), legend=False,data=mars_df)
 ax.set_title('Atmospheric Pressure on Mars')
 ax.set_xlabel('Sol (Martian Day)')
 ax.set_ylabel('Pressure (Pa)')
-fig.savefig('templates/Visualizations/Pressure.png')
+fig.savefig('Visualizations/Pressurepy.png')
 
 mars_dropped=mars_df.drop(['Average Temp'], axis=1)
 
@@ -120,7 +121,7 @@ ax3.plot(mars_df['Sol'], mars_df['Average Temp'], c='black', label='Temp')
 ax3.set_ylim(-62,-57)
 
 fig.legend(loc='upper right')
-fig.savefig('templates/Visualizations/combined.png')
+fig.savefig('Visualizations/combinedpy.png')
 
 
 
